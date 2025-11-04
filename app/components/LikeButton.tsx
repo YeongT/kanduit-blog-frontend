@@ -1,16 +1,38 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-export default function LikeButton() {
+interface LikeButtonProps {
+  postId: string;
+}
+
+export default function LikeButton({ postId }: LikeButtonProps) {
   const [likeCount, setLikeCount] = useState(0);
   const [isLiked, setIsLiked] = useState(false);
 
+  // 컴포넌트가 마운트될 때 localStorage에서 데이터 불러오기
+  useEffect(() => {
+    const savedLikeCount = localStorage.getItem(`likeCount_${postId}`);
+    const savedIsLiked = localStorage.getItem(`isLiked_${postId}`);
+    
+    if (savedLikeCount) {
+      setLikeCount(parseInt(savedLikeCount));
+    }
+    if (savedIsLiked) {
+      setIsLiked(savedIsLiked === 'true');
+    }
+  }, [postId]);
+
   const handleLike = () => {
     if (!isLiked) {
-      setLikeCount((prev) => prev + 1);
+      const newCount = likeCount + 1;
+      setLikeCount(newCount);
       setIsLiked(true);
-    }
+      
+      // localStorage에 데이터 저장
+      localStorage.setItem(`likeCount_${postId}`, newCount.toString());
+      localStorage.setItem(`isLiked_${postId}`, 'true');
+    };
   };
 
   return (

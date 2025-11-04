@@ -1,6 +1,6 @@
 'use client';
 
-import LikeButton from './components/LikeButton';
+import ReactionButtons from './components/ReactionButtons';
 
 export default function Home() {
   return (
@@ -11,9 +11,12 @@ export default function Home() {
           <h1 className="mb-8 text-4xl font-bold tracking-tight text-gray-900 dark:text-white md:text-6xl">
             HMYC Blog
           </h1> 
-          <p className="mb-8 text-xl text-gray-600 dark:text-gray-300">
-            WE GO HIGH.
-          </p>
+          <div className="mb-8 flex items-center gap-4">
+            <p className="text-xl text-gray-600 dark:text-gray-300">
+              WE GO HIGH.
+            </p>
+            <ReactionButtons postId="motto" />
+          </div>
         </div>
       </section>
 
@@ -32,9 +35,6 @@ export default function Home() {
               <p className="mb-4 text-gray-600 dark:text-gray-300">
                 개발을 시작하는 분들을 위한 로드맵과 유용한 리소스를 정리했습니다.
               </p>
-              <div className="mb-4">
-                <LikeButton />
-              </div>
               <a
                 href="#"
                 className="inline-flex items-center text-blue-600 hover:underline dark:text-blue-400"
@@ -66,9 +66,6 @@ export default function Home() {
               <p className="mb-4 text-gray-600 dark:text-gray-300">
                 2025년 주목해야 할 웹 개발 트렌드와 기술들을 소개합니다.
               </p>
-              <div className="mb-4">
-                <LikeButton />
-              </div>
               <a
                 href="#"
                 className="inline-flex items-center text-blue-600 hover:underline dark:text-blue-400"
@@ -99,9 +96,6 @@ export default function Home() {
               <p className="mb-4 text-gray-600 dark:text-gray-300">
                 모던 웹 기술을 활용한 블로그 제작 과정을 상세히 설명합니다.
               </p>
-              <div className="mb-4">
-                <LikeButton />
-              </div>
               <a
                 href="#"
                 className="inline-flex items-center text-blue-600 hover:underline dark:text-blue-400"
