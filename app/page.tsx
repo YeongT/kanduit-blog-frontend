@@ -7,10 +7,10 @@ export default function Home() {
       <section className="px-4 py-20 md:py-32">
         <div className="container mx-auto max-w-6xl">
           <h1 className="mb-8 text-4xl font-bold tracking-tight text-gray-900 dark:text-white md:text-6xl">
-            Hmunlimit Blog
+            HMYC Blog
           </h1>
           <p className="mb-8 text-xl text-gray-600 dark:text-gray-300">
-            개발과 기술에 대한 인사이트를 공유합니다.
+            WE GO HIGH.
           </p>
         </div>
       </section>
